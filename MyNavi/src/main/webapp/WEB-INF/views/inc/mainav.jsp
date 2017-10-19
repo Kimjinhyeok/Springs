@@ -2,10 +2,10 @@
     pageEncoding="UTF-8"%>
 <div class="wrapper row2">
   <nav id="mainav" class="hoc clear"> 
-    <!-- ################################################################################################ -->
+    
     <ul class="clear">
-      <li><a href="../index.htm">Home</a></li>
-      <li class="active"><a class="drop" href="#">Pages</a>
+      <li class="active"><a href="../index.htm">Home</a></li>
+      <li><a class="drop" href="#">Pages</a>
         <ul>
           <li><a href="gallery.htm">Gallery</a></li>
           <li><a href="full-width.htm">Full Width</a></li>
@@ -32,6 +32,6 @@
       <li><a href="#">Link Text</a></li>
       <li><a href="#">Long Link Text</a></li>
     </ul>
-    <!-- ################################################################################################ -->
+    
   </nav>
 </div>

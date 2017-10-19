@@ -3,18 +3,18 @@
        "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN"
        "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
 <tiles-definitions>
-	<definition name="home.index" template="/WEB-INF/views/test.jsp">
-		<!-- 
-		<put-attribute name="title" value="뉴렉처 사이트에 온걸 환영합니다."/>
+	<definition name="home.index" template="/WEB-INF/views/home/layout.jsp">
+		<put-attribute name="title" value=""/>
 		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
+		<put-attribute name="mainav" value="/WEB-INF/views/inc/mainav.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
-		<put-attribute name="content" value="/WEB-INF/views/{1}.jsp" /> --><!-- 첫번쨰 *의 값으로 표시 -->
+		<put-attribute name="content" value="/WEB-INF/views/home/index.jsp" /> <!-- 첫번쨰 *의 값으로 표시 -->
 	</definition>
 	<definition name="*.*" template="/WEB-INF/views/{1}/inc/layout.jsp">
-		<put-attribute name="title" value="뉴렉처 사이트에 온걸 환영합니다."/>
+		<put-attribute name="title" value=""/>
 		<put-attribute name="css" value="{2}.css"/>
 		<put-attribute name="header" value="/WEB-INF/views/inc/header.jsp" />
-		<put-attribute name="mainav" value="/WEB-INF/views/{1}/inc/mainav.jsp" />
+		<put-attribute name="mainav" value="/WEB-INF/views/inc/mainav.jsp" />
 		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" /><!-- 첫번쨰 *의 값으로 표시 -->
 	</definition>
