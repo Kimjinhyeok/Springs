@@ -1,4 +1,4 @@
-package com.test.tiles;
+package com.test.tiles.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

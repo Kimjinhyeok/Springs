@@ -1,0 +1,38 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.tiles.dao.MenuMapper">
+	<insert id="makeNewMenu" parameterType="com.test.tiles.vo.MenuVO">
+		INSERT INTO 
+		MENUS(
+			MENNAME, 
+			MENREGDATE, 
+			MENURLNAME,
+			MENADMIN, 
+			MENPARENT, 
+			MENDEPTH, 
+			MENTYPE
+		)VALUES(
+			#{menName},
+			#{menRegDate},
+			#{menUrlName},
+			#{menAdmin}, 
+			#{menParent}, 
+			#{menDepth}
+		)
+	</insert>
+	
+	<select id="getMenuList">
+		SELECT 
+			M.MENNAME, 
+			M.URLNAME, 
+			M.MENADMIN, 
+			M.MENDEPTH
+		FROM
+			 MENUS M , CAREGORIES C
+		 ORDER BY 
+		 	MENIDX ASC AND
+		 	MENDEPTH DESC
+	</select>
+</mapper>

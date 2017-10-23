@@ -1,4 +1,4 @@
-package com.test.tiles;
+package com.test.tiles.controller;
 
 import java.text.DateFormat;
 import java.util.Date;
