@@ -7,11 +7,11 @@
       <li class="active"><a href="../index.htm">Home</a></li>
       <li><a class="drop" href="#">Pages</a>
         <ul>
-          <li><a href="gallery.htm">Gallery</a></li>
-          <li><a href="full-width.htm">Full Width</a></li>
-          <li><a href="sidebar-left.htm">Sidebar Left</a></li>
-          <li><a href="sidebar-right.htm">Sidebar Right</a></li>
-          <li><a href="basic-grid.htm">Basic Grid</a></li>
+          <li><a href="${pageContext.request.contextPath}/pages/gallery.htm">Gallery</a></li>
+          <li><a href="${pageContext.request.contextPath}/pages/full-width.htm">Full Width</a></li>
+          <li><a href="${pageContext.request.contextPath}/pages/sidebar-left.htm">Sidebar Left</a></li>
+          <li><a href="${pageContext.request.contextPath}/pages/sidebar-right.htm">Sidebar Right</a></li>
+          <li><a href="${pageContext.request.contextPath}/pages/basic-grid.htm">Basic Grid</a></li>
         </ul>
       </li>
       <li><a class="drop" href="#">Dropdown</a>
