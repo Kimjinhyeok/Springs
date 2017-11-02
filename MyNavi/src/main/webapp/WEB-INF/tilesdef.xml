@@ -23,4 +23,8 @@
 		<put-attribute name="footer" value="/WEB-INF/views/inc/footer.jsp" />
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" /><!-- 첫번쨰 *의 값으로 표시 -->
 	</definition>
+	
+	<!-- Manage -->
+	<definition name="member.login" template="/WEB-INF/views/member/inc/layout.jsp">
+	</definition>
 </tiles-definitions>

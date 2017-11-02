@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
 <div class="wrapper row0">
 	<div id="topbar" class="hoc clear">
 		<!-- ################################################################################################ -->
@@ -11,8 +12,8 @@
 		</div>
 		<div class="fl_right">
 			<ul class="faico clear">
-				<li><a class="faicon-facebook" href="#"><i><b>로그인</b></i></a></li>
-				<li><a class="faicon-pinterest" href="#"><i><b>회원가입</b></i></a></li>
+				<li><a class="faicon-facebook" href="${pageContext.request.contextPath}/member/login.htm"><i><b>로그인</b></i><b>&nbsp;<i>회원가입</i></b></a></li>
+				<%-- <li><a class="faicon-pinterest" href="${pageContext.request.contextPath}/member/login.htm"><i><b>회원가입</b></i></a></li> --%>
 				<!-- 
 				<li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
 				<li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>

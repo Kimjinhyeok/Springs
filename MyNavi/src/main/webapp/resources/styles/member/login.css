@@ -1,5 +1,5 @@
 body {
-	padding-top: 90px;
+	padding-top: 190px;
 }
 
 .panel-login {
@@ -64,9 +64,9 @@ body {
 	box-shadow: none;
 	border-color: #ccc;
 }
-
+/* 59B2E0 */
 .btn-login {
-	background-color: #59B2E0;
+	background-color: #394251;
 	outline: none;
 	color: #fff;
 	font-size: 14px;
@@ -74,13 +74,16 @@ body {
 	font-weight: normal;
 	padding: 14px 0;
 	text-transform: uppercase;
-	border-color: #59B2E6;
+	border-color: #D7D7D7;
 }
 
+/*
+	53A3CD
+*/
 .btn-login:hover, .btn-login:focus {
-	color: #fff;
-	background-color: #53A3CD;
-	border-color: #53A3CD;
+	color: #FFFFFF;
+	background-color: #82B440;
+	border-color: #82B440;
 }
 
 .forgot-password {
@@ -94,7 +97,7 @@ body {
 }
 
 .btn-register {
-	background-color: #1CB94E;
+	background-color: #394251;
 	outline: none;
 	color: #fff;
 	font-size: 14px;
@@ -102,11 +105,16 @@ body {
 	font-weight: normal;
 	padding: 14px 0;
 	text-transform: uppercase;
-	border-color: #1CB94A;
+	border-color: #D7D7D7;
 }
 
 .btn-register:hover, .btn-register:focus {
-	color: #fff;
-	background-color: #1CA347;
-	border-color: #1CA347;
+	color: #FFFFFF;
+	background-color: #82B440;
+	border-color: #82B440;
+}
+
+#login-form-link:hover,
+#register-form-link:hover{
+	color:#7aa93c;
 }
