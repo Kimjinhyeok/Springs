@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:param name="path" value="${pageContext.request.contextPath}"></c:param>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,9 +11,9 @@
 	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/member/login.css">
-<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/member/login.js"></script>
+<link rel="stylesheet" href="${path}/css/member/login.css">
+<script src="${path}/js/jquery.min.js"></script>
+<script src="${path}/js/member/login.js"></script>
 </head>
 <body id="top">
 	<div class="container">
@@ -69,12 +70,16 @@
 									</div>
 								</form>
 								<form id="register-form"
-									action="http://phpoll.com/register/process" method="post"
+									action="${path}/member/join.htm" method="post"
 									role="form" style="display: none;">
 									<div class="form-group">
 										<input type="email" name="email" id="email" tabindex="1" required="required"
 											class="form-control" placeholder="이메일, ex)navigator@gmail.com" value="">
 										<span class="form-warning noneactive">중복된 이메일 입니다.</span>
+									</div>
+									<div class="form-group">
+										<input type="text" name="name" id="name" tabindex="1" maxlength="10" required="required"
+											class="form-control" placeholder="성명" value="">
 									</div>
 									<div class="form-group">
 										<input type="tel" name="phone" id="phone" tabindex="1" maxlength="13" required="required"

@@ -22,11 +22,7 @@ public class MemberService implements Dao{
 	private MemberMapper mapper;
 	@Autowired
 	SimpleDriverDataSource dataSource;
-	/*
-	public void setMapper(MemberMapper mapper) {	
-		this.mapper = mapper;
-	}
-	*/
+	
 	public int memCheckID(MemberVO mem) {
 		int result = this.mapper.memCheckID(mem);
 //		return (Integer)this.session.selectOne("com.test.tiles.mapper.MemberMapper.memCheckID", mem);
@@ -37,5 +33,7 @@ public class MemberService implements Dao{
 		return this.memLoginTry(mem);
 	}
 
-	
+	public int insertNewMenber(MemberVO mem) {
+		return this.insertNewMenber(mem);
+	}
 }
