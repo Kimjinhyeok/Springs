@@ -17,11 +17,7 @@ import com.test.tiles.vo.MemberVO;
 public class MemberService implements Dao{
 
 	@Autowired
-	private SqlSessionTemplate session;
-	@Autowired
 	private MemberMapper mapper;
-	@Autowired
-	SimpleDriverDataSource dataSource;
 	
 	public int memCheckID(MemberVO mem) {
 		int result = this.mapper.memCheckID(mem);
@@ -30,10 +26,14 @@ public class MemberService implements Dao{
 	}
 
 	public int memLoginTry(MemberVO mem) {
-		return this.memLoginTry(mem);
+		return this.mapper.memLoginTry(mem);
 	}
 
-	public int insertNewMenber(MemberVO mem) {
-		return this.insertNewMenber(mem);
+	public void insertNewMember(MemberVO mem) {
+		this.mapper.insertNewMember(mem);
+	}
+	
+	public MemberVO selectOneByEmail(String email) {
+		return this.mapper.selectOneByEmail(email);
 	}
 }

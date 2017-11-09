@@ -1,25 +1,33 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath}"></c:set>
+<script type="text/javascript">
+	alert(${login});
+</script>
 <div class="wrapper row0">
 	<div id="topbar" class="hoc clear">
 		<!-- ################################################################################################ -->
 		<div class="fl_left">
 			<ul class="nospace inline pushright">
-				<li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
-				<li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+				<c:if test="${login != '' || login ne null || !empty login}">
+						<li><i class="fa fa-envelope-o"></i>${memEmail}</li>
+				</c:if>
 			</ul>
 		</div>
 		<div class="fl_right">
 			<ul class="faico clear">
-				<li><a class="faicon-facebook" href="#"><i><b>로그인</b></i></a></li>
-				<li><a class="faicon-pinterest" href="#"><i><b>회원가입</b></i></a></li>
-				<!-- 
-				<li><a class="faicon-twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a class="faicon-dribble" href="#"><i class="fa fa-dribbble"></i></a></li>
-				<li><a class="faicon-linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>
-				<li><a class="faicon-google-plus" href="#"><i class="fa fa-google-plus"></i></a></li>
-				<li><a class="faicon-rss" href="#"><i class="fa fa-rss"></i></a></li>
-				 -->
+				<c:choose>
+					<c:when test="${login == '' || login eq null || empty login}">
+						<li><a class="faicon-facebook" href="${path}/member/login.htm"><i><b>로그인</b></i></a></li>
+						<li><a class="faicon-pinterest" href="#"><i><b>회원가입</b></i></a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a class="faicon-pinterest" href="#"><b>${memName}</b></a></li>
+						<li><a class="faicon-facebook" href="#"><b>마이페이지</b></a></li>
+					</c:otherwise>
+				</c:choose>
+				
 			</ul>
 		</div>
 		<!-- ################################################################################################ -->

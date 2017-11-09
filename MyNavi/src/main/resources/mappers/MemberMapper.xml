@@ -3,28 +3,29 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.test.tiles.mapper.MemberMapper">
-	<insert id="insertNewMenber" parameterType="com.test.tiles.vo.MemberVO">
+	<insert id="insertNewMember" parameterType="com.test.tiles.vo.MemberVO">
 		INSERT INTO MEMBER
 		(
 			MEMEMAIL,
 			MEMPWD,
 			MEMNAME,
-			MEMHP,
-			MEMPOSITION,
-			MEMJOINED
+			MEMHP
 		)
 		VALUES(
-			'#{memEmail}',
-			'#{memPwd}',
-			'#{memName}',
-			'#{memHP}',
-			'#{memPositioin}',
-			'#{memJoined}'
+			#{memEmail},
+			#{memPwd},
+			#{memName},
+			#{memHP}
 		)
 	</insert>
 	
-	<select id="getMemberList" resultType="com.test.tiles.vo.MemberVO">
-		
+	<select id="selectOneByEmail" resultType="com.test.tiles.vo.MemberVO" parameterType="String">
+		SELECT
+			MEMEMAIL, MEMNAME
+		FROM 
+			MEMBER
+		WHERE
+			MEMEMAIL = #{email}
 	</select>
 	
 	<select id="memCheckID" parameterType="com.test.tiles.vo.MemberVO" resultType="int">
@@ -36,7 +37,7 @@
 			MEMEMAIL = #{memEmail}
 	</select>
 	
-	<select id="memLoginTry" parameterType="com.test.tiles.vo.MemberVO">
+	<select id="memLoginTry" parameterType="com.test.tiles.vo.MemberVO" resultType="int">
 		SELECT 
 			COUNT(MEMEMAIL)
 		FROM 
