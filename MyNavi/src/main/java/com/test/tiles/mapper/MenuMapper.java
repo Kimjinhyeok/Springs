@@ -1,4 +1,4 @@
-package com.test.tiles.dao;
+package com.test.tiles.mapper;
 
 import com.test.tiles.vo.MenuVO;
 

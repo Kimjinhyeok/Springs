@@ -12,6 +12,9 @@ public class MemberVO {
 	private String memPosition;
 	private String memJoined;
 	
+	public MemberVO() {
+	}
+
 	public MemberVO(String memEmail, String memPwd, String memName, String memHP, Date memRegDate, String memPosition,
 			String memJoined) {
 		this.memEmail = memEmail;

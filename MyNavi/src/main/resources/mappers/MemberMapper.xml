@@ -1,0 +1,47 @@
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.test.tiles.mapper.MemberMapper">
+	<insert id="insertNewMenber" parameterType="com.test.tiles.vo.MemberVO">
+		INSERT INTO MEMBER
+		(
+			MEMEMAIL,
+			MEMPWD,
+			MEMNAME,
+			MEMHP,
+			MEMPOSITION,
+			MEMJOINED
+		)
+		VALUES(
+			'#{memEmail}',
+			'#{memPwd}',
+			'#{memName}',
+			'#{memHP}',
+			'#{memPositioin}',
+			'#{memJoined}'
+		)
+	</insert>
+	
+	<select id="getMemberList" resultType="com.test.tiles.vo.MemberVO">
+		
+	</select>
+	
+	<select id="memCheckID" parameterType="com.test.tiles.vo.MemberVO" resultType="int">
+		SELECT
+			COUNT(MEMEMAIL)
+		FROM
+			MEMBER
+		WHERE
+			MEMEMAIL = #{memEmail}
+	</select>
+	
+	<select id="memLoginTry" parameterType="com.test.tiles.vo.MemberVO">
+		SELECT 
+			COUNT(MEMEMAIL)
+		FROM 
+			MEMBER
+		WHERE
+			 MEMEMAIL = #{memEmail} and MEMPWD = #{memPwd}
+	</select>
+</mapper>

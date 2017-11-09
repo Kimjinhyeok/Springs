@@ -47,8 +47,8 @@ body {
 		rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0));
 }
 
-.panel-login input[type="text"], .panel-login input[type="email"],
-	.panel-login input[type="password"] {
+.panel-login input[type="text"],.panel-login input[type="tel"],
+	 .panel-login input[type="email"], .panel-login input[type="password"] {
 	height: 45px;
 	border: 1px solid #ddd;
 	font-size: 16px;
@@ -109,4 +109,12 @@ body {
 	color: #fff;
 	background-color: #1CA347;
 	border-color: #1CA347;
+}
+
+.form-warning{
+	color: red;
+	margin-left: 5px;
+}
+.noneactive{
+	display: none;
 }

@@ -1,4 +1,4 @@
-package com.test.tiles.dao;
+package com.test.tiles.mapper;
 
 import java.util.List;
 

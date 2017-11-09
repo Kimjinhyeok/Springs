@@ -2,7 +2,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.test.tiles.dao.MenuMapper">
+<mapper namespace="com.test.tiles.mapper.MenuMapper">
 	<insert id="makeNewMenu" parameterType="com.test.tiles.vo.MenuVO">
 		INSERT INTO 
 		MENUS(
