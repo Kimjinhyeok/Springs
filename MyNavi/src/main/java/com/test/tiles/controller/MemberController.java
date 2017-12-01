@@ -1,5 +1,7 @@
 package com.test.tiles.controller;
 
+import java.io.IOException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -21,7 +23,7 @@ public class MemberController {
 	@Autowired
 	private MemberService service;
 	
-	@RequestMapping("join.htm")
+	@RequestMapping("register.htm")
 	public String join(String email, String name, String phone, String password, HttpServletRequest req){
 		
 		//check parameters nullable
@@ -36,6 +38,11 @@ public class MemberController {
 		return "member.login"; 
 	}
 	
+	@RequestMapping("join.htm")
+	public String Join() {
+		return "member.join";
+	}
+	
 	// Just send to Login page
 	@RequestMapping("login.htm")
 	public String login(HttpServletRequest req, HttpServletResponse res) {
@@ -43,7 +50,7 @@ public class MemberController {
 	}
 
 	@RequestMapping("loginChk.htm")
-	public String loginChk(String email, String password, HttpServletRequest req){
+	public String loginChk(String email, String password, HttpServletRequest req, HttpServletResponse res) throws IOException{
 		if(!memberInfoCheckNull(email, password)) {
 			return "member.login";
 		}
@@ -59,10 +66,18 @@ public class MemberController {
 			session.setAttribute("login", true);
 			session.setAttribute("memEmail", member.getMemEmail());
 			session.setAttribute("memName", member.getMemName());  
-			
-			return "home.index";
+
+			return "redirect:/";
 		}
-		return "";
+		return "member.login";
+	}
+	
+	@RequestMapping("logout.htm")
+	public String logout(HttpServletRequest req) {
+		HttpSession session = req.getSession();
+		session.invalidate();
+		
+		return "redirect:/";
 	}
 	
 	private boolean memberInfoCheckNull(String... strs) {

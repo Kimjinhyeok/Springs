@@ -1,3 +1,16 @@
+/*$(document).ready(function(){
+	$("#idcheck").click(function(event){
+		event.preventDefault();
+		var userId = $("#userId").val();
+		$.get("idcheck?userId="+ userId, function(data, status){
+			if(data == true){
+				$("#submit").prop("disable", true);	// Null 이면 Submit 방지
+			}
+			
+		});
+	});
+});*/
+
 $(function() {
 	
 	idchk = false;		// 전역
@@ -5,18 +18,40 @@ $(function() {
 	pass = false;
 	passChk = false;
 	
-    $('#login-form-link').click(function(e) {
-		$("#login-form").delay(100).fadeIn(100);
- 		$("#register-form").fadeOut(100);
+	var page = getThisPage();
+	function showLogin(){
 		$('#register-form-link').removeClass('active');
-		$(this).addClass('active');
+		$('#login-form-link').addClass('active');
+    	$("#login-form").delay(100).fadeIn(100);
+ 		$("#register-form").fadeOut(100);
+	}
+	function showRegister(){
+		$('#login-form-link').removeClass('active');
+		$('#register-form-link').addClass('active');
+		$("#register-form").delay(100).fadeIn(100);
+ 		$("#login-form").fadeOut(100);
+	}
+	
+	if(page === "login"){
+		showLogin();
+	}else if(page === "join"){
+		showRegister();
+	}
+	
+    $('#login-form-link').click(function(e) {
+    	showLogin();
 		e.preventDefault();
 	});
 	$('#register-form-link').click(function(e) {
-		$("#register-form").delay(100).fadeIn(100);
- 		$("#login-form").fadeOut(100);
-		$('#login-form-link').removeClass('active');
-		$(this).addClass('active');
+		showRegister();
+		e.preventDefault();
+	});
+	$("#login-cancel").click(function(e){
+		window.history.back();
+		e.preventDefault();
+	});
+	$("#join-cancel").click(function(e){
+		window.history.back();
 		e.preventDefault();
 	});
 	
@@ -93,6 +128,7 @@ $(function() {
 			}
 		}
 	});
+	
 });
 
 function warning (element){
@@ -110,8 +146,8 @@ function checkEamil(email){
 		url : "/tiles/idchk",
 		data : {"email" : email},
 		dataType : "json",
-		success : function(data){
-			if(data.state)
+		success : function(data, status){
+			if(data)
 				idchk = true;
 			if(!idchk){
 				warning($("#email").next());
@@ -124,4 +160,13 @@ function checkEamil(email){
 			
 		}
 	});
+}
+
+function getThisPage(){
+	var url = window.location.href;
+	var splits = url.split("/");
+
+	var page = splits[splits.length-1].split(".");
+	
+	return page[0];
 }

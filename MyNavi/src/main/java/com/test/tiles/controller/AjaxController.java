@@ -19,11 +19,18 @@ public class AjaxController {
 	
 	@JsonView(Views.Public.class)
 	@RequestMapping("/idchk")
-	public Map<String, Boolean> idchk(String email){
+	/*public Map<String, Boolean> idchk(String email){
 		MemberVO mem = new MemberVO();
 		mem.setMemEmail(email);
 		
 		int result = this.memService.memCheckID(mem);
 		return Collections.singletonMap("state", result > 0 ? false : true);
+	}*/
+	public boolean idchk(String email){
+		MemberVO mem = new MemberVO();
+		mem.setMemEmail(email);
+		
+		int result = this.memService.memCheckID(mem);
+		return (result > 0 ? false : true);
 	}
 }

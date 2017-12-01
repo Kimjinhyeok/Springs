@@ -8,7 +8,7 @@ Licence URI: http://www.os-templates.com/template-terms
 File: Layout CSS
 */
 
-@import url("fontawesome-4.5.0.min.css");
+@import url("font-awesome.min.css");
 @import url("framework.css");
 
 /* Rows
@@ -224,9 +224,9 @@ td{border-width:0 1px;}
 /*
 	우측 상단 메뉴 길이 조정
 */
-.faico a{display:inline-block; width:70px; height:30px; line-height:30px; font-size:14px; text-align:center;}
-.faico a{color:inherit; background-color:transparent;}
-
+.faico a{display:inline-block; height:30px; line-height:30px; font-size:14px; text-align:center;}
+.faico a{color:inherit; background-color:transparent; margin-right: 5px;}
+.faico li i{margin: 0 5px;}
 .faicon-dribble:hover{color:#EA4C89;}
 .faicon-facebook:hover{color:#3B5998;}
 .faicon-google-plus:hover{color:#DB4A39;}
